@@ -22,13 +22,13 @@ Para desarrollar esta práctica se ha utilizado el lenguaje de **JavaScript**, *
 
 Dentro de la carpeta **docs** contamos con los siguientes directorios y ficheros:
 
-**- examples:** Es un directorio que incluye diferentes ejemplos de textos que contienen varios documentos con los que se puede comprobar el correcto funcionamiento del programa.
+* **examples:** Es un directorio que incluye diferentes ejemplos de textos que contienen varios documentos con los que se puede comprobar el correcto funcionamiento del programa.
 
-**- src:** Es un directorio que almacena los siguientes ficheros en **JavaScript**:
+* **src:** Es un directorio que almacena los siguientes ficheros en **JavaScript**:
 
-  **- form.js:** Es el fichero donde se almacenan los datos del formulario colocados por el usuario y permite realizar la llamada a las funciones necesarias de la clase Recommender para mostrar los resultados por pantalla.
-  **- recommender.js:** Es el fichero que define la clase Recommender que implementa el sistema de recomendación. En esta clase se lleva a cabo la realización de los cálculos de los valores TF, IDF y TFIDF de cada término para cada documento. Además, se lleva a cabo la realización del cálculo de la normalización del TF para posteriormente realizar la operación de Similitud de Coseno entre documentos.
+  * **form.js:** Es el fichero donde se almacenan los datos del formulario colocados por el usuario y permite realizar la llamada a las funciones necesarias de la clase Recommender para mostrar los resultados por pantalla.
+  * **recommender.js:** Es el fichero que define la clase Recommender que implementa el sistema de recomendación. En esta clase se lleva a cabo la realización de los cálculos de los valores TF, IDF y TFIDF de cada término para cada documento. Además, se lleva a cabo la realización del cálculo de la normalización del TF para posteriormente realizar la operación de Similitud de Coseno entre documentos.
 
-**- index.html:** Es el fichero en **HTML** que permite crear la página web.
+* **index.html:** Es el fichero en **HTML** que permite crear la página web.
 
-**- style.css:** Es la hoja de estilo de **CSS** que define el estilo de presentación del documento HTML.
+* **style.css:** Es la hoja de estilo de **CSS** que define el estilo de presentación del documento HTML.
