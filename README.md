@@ -61,24 +61,17 @@ const fileInput = document.getElementById('text');
 fileInput.addEventListener('change', fileToMatrix);
 ```
 
-En la llamada a la función `fileToMatrix()` se lee el fichero cargado y se obtienen los valores para almacenarlos en el atributo de la clase correspondiente. Para ello, se coge el fichero que esté en la primera posición del array de ficheros, dado que solo se puede introducir un fichero, y posteriormente lo lee a través de la llamada a la función `readAsText` del objeto `FileReader` creado. 
-
-Luego, se carga dicha lectura y en ella, se obtiene el resultado que es separado por líneas siendo cada línea un documento y es almacenado en un vector a través de `let docs = content.split('\n')`. Se recorre cada línea, es decir, cada documento y se comprueba que no existen líneas vacias, y finalmente, se colocan todos los términos en minúscula dada la función `toLowerCase()` y se quitan aquellos signos de puntuación a través de dos expresiones regulares. Una vez hecho esto, se separa por espacios cada una de las palabras y se almacenan en un array auxiliar que hace referencia al documento de palabras o términos que es introducido en la matriz de documentos originales del atributo de la clase. 
+En la llamada a la función `fileToMatrix()` se lee el fichero cargado y se obtienen los valores para almacenarlos en el atributo de la clase correspondiente. Para ello, se coge el fichero que esté en la primera posición del array de ficheros, dado que solo se puede introducir un fichero, y posteriormente lo lee a través de la llamada a la función `readAsText()` del objeto `FileReader` creado.
 
 ```js
-/**
- * Método que permite leer el fichero cargado y obtener los valores para almacenarlos en el atributo de la clase
- * @param {*} e Ficheros cargados
- * @returns texto
- */
-function fileToMatrix(e) {
-    if (e.target.files.length < 1) {
-      alert("Tienes que subir un fichero de contenido");
-    }
     const file = fileInput.files[0];
     let reader = new FileReader();
     reader.readAsText(file);
+```
 
+Luego, se carga dicha lectura y en ella, se obtiene el resultado que es separado por líneas siendo cada línea un documento. Este es almacenado en un vector que separa el contenido por líneas a través de `content.split('\n')`. Se recorre cada línea, es decir, cada documento y se comprueba que no existen líneas vacias, y finalmente, se colocan todos los términos en minúscula dada la función `toLowerCase()` y se quitan aquellos signos de puntuación a través de dos expresiones regulares. Una vez hecho esto, se separa por espacios cada una de las palabras y se almacenan en un array auxiliar que hace referencia al documento de palabras o términos que es introducido en la matriz de documentos originales del atributo de la clase. 
+
+```js
     reader.onload = function() {
         const content = reader.result;
         let docs = content.split('\n');
@@ -93,9 +86,6 @@ function fileToMatrix(e) {
             }
         }
         recommender.docsOriginals(originalMatrix);
-    }
-    return text;
-}
 ```
 
 Por otro lado, tenemos el evento **click** que permite ejecutar los cálculos de la recomendación y además, mostrarlos en pantalla a través de los id's.
