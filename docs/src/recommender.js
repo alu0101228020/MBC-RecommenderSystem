@@ -11,7 +11,7 @@ class Recommender {
        this.uniqueWordsMatrix = []; // Matriz original de documentos sin palabras duplicadas
        this.TFMatrix = []; // Matriz con los valores TF de los términos de cada documento
        this.IDFMatrix = []; // Matriz con los valores IDF de los términos de cada documento
-       this.TFIDFMatrix = []; // Matriz con los valores TFID de los términos de cada documento
+       this.TFIDFMatrix = []; // Matriz con los valores TFIDF de los términos de cada documento
        this.similarityMatrix = []; // Matriz con los valores de Similitud de Coseno de cada documento
     }
 
