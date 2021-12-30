@@ -98,7 +98,7 @@ function fileToMatrix(e) {
 }
 ```
 
-Por otro lado, tenemos el evento **clic** que permite ejecutar los cálculos de la recomendación y además, mostrarlos en pantalla a través de los id's.
+Por otro lado, tenemos el evento **click** que permite ejecutar los cálculos de la recomendación y además, mostrarlos en pantalla a través de los id's.
 
 ```js
 /**
@@ -106,84 +106,8 @@ Por otro lado, tenemos el evento **clic** que permite ejecutar los cálculos de 
  */
 const result = document.getElementById('button');
     result.addEventListener('click', function(e) {
-        document.getElementById('documentsTable').innerHTML = calculateDocuments();
-        document.getElementById('similarityTable').innerHTML = '<div class="col s12"><h5>Similitud Coseno</h5></div><div>' + getTableSimilarity(recommender.calculateCosineSimilarity()) + '</div>';
-});
 ```
 
-Al pulsar el botón se lleva a cabo la ejecución de la siguiente función que se encarga de llamar a las funciones que calculan las matrices de los valores TF, IDF y TFIDF de los términos de cada documento, luego se recorre cada uno de los documentos, es decir, de las filas de las matrices y con la llamada a la función `getTableDocument()` se obtienen la tabla en HTML de dicho documento con los valores calculados y se van almacenando las distintas tablas de los documentos en una cadena que devuelve.
-
-```js
-/**
- * Método que permite llamar a las funciones que calculan las matrices de los valores TF, IDF y TFIDF de los términos de cada documento y almacena las distintas tablas de los documentos en una cadena
- * @returns Cadena con las tablas de los valores calculados de los distintos documentos que se imprimirán por HTML
- */
-function calculateDocuments() {
-    let result = '';
-    let uniqueWordsMatrix = recommender.docsUniqueWords();
-    let TFMatrix = recommender.calculateTF();
-    let IDFMatrix = recommender.calculateIDF();
-    let TFIDFMatrix = recommender.calculateTFIDF();
-    for (let i = 0; i < uniqueWordsMatrix.length; i++) {
-        result += '<div class="col s12"><h5>Documento ' + (i+1) + '</h5></div><div>' + getTableDocument(uniqueWordsMatrix[i], TFMatrix[i], IDFMatrix[i], TFIDFMatrix[i]) + '</div>';
-    }
-    return result;
-}
-
-/**
- * Método que permite imprimir las tablas de documentos con los valores TF, IDF y TFIDF
- * @param {*} docUniqueWords Vector del documento con palabras no duplicadas
- * @param {*} docTF Vector del documento con los valores TF
- * @param {*} docIDF Vector del documento con los valores IDF
- * @param {*} docTFIDF Vector del documento con los valores TFIDF
- * @returns Tabla del documento con los valores TF, IDF y TFIDF calculados
- */
-function getTableDocument(docUniqueWords, docTF, docIDF, docTFIDF) {
-    let table = '<div class="col s12" id="scrollTable"><table class="stripped"><thead><tr>';
-
-    table += '<th>Índice</th><th>Término</th><th>TF</th><th>IDF</th><th>TFIDF</th>';
-
-    table += '</tr></thead><tbody>';
-
-    for (let i = 0; i < docUniqueWords.length; i++) {
-        table += '<tr>';
-        table += '<td>' + (i + 1) + '</td>';
-        table += '<td>' + docUniqueWords[i] + '</td>';
-        table += '<td>' + docTF[i] + '</td>';
-        table += '<td>' + Math.round((docIDF[i] + Number.EPSILON) * 1000) / 1000 + '</td>';
-        table += '<td>' + Math.round((docTFIDF[i] + Number.EPSILON) * 1000) / 1000 + '</td>';
-        table += '</tr>';
-    }
-    table += '</tbody></table></div>';
-    return table;
-}
-```
+Al pulsar el botón se lleva a cabo la ejecución de la función `calculateDocuments()` que se encarga de llamar a las funciones que calculan las matrices de los valores TF, IDF y TFIDF de los términos de cada documento, luego se recorre cada uno de los documentos, es decir, las filas de las matrices y con la llamada a la función `getTableDocument()` se obtiene la tabla en HTML de dicho documento con los valores calculados. Las distintas tablas de los documentos se van almacenando en una cadena que devuelve.
 
 Por último, la función `getTableSimilarity()` permite imprimir la tabla de documentos en HTML con los valores de Similitud de Coseno.
-
-```js
-/**
- * Método que permite imprimir la tabla de documentos con los valores de Similitud de Coseno
- * @param {*} similarityMatrix Matriz con los valores de Similitud de Coseno
- * @returns Tabla de documentos con los valores de Similitud de Coseno
- */
-function getTableSimilarity(similarityMatrix) {
-    let table = '<div class="col s12" id="scrollTable"><table class="stripped"><thead><tr><th> </th>';
-
-    for (let i = 0; i < similarityMatrix.length; i++) {
-        table += '<th>Documento ' + (i+1) + '</th>';
-    }
-
-    table += '</tr></thead><tbody>';
-
-    for (let i = 0; i < similarityMatrix.length; i++) {
-        table += '<tr><th> Documento ' + (i + 1) + '</th>';
-        for (let j = 0; j < similarityMatrix[i].length; j++) {
-            table += '<td>' + Math.round((similarityMatrix[i][j] + Number.EPSILON) * 1000) / 1000 + '</td>';
-        }
-        table += '</tr>';
-    }
-    table += '</tbody></table></div>';
-    return table;
-}
-```
