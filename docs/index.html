@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Práctica GCO de Sitemas de recomendación: Modelos Basados en el Contenido</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="row card white">
+          <div class="col s12">
+            <h1 class="center">Práctica: Sistemas de recomendación</h1>
+          </div>
+          <div class="col s12">
+            <h2 class="center">Modelos Basados en el Contenido</h2>
+          </div>
+          <div class="col s12 offset-s2">
+            <p class="title">Introduce el siguiente parámetro:</p>
+          </div>
+          <div class="col s8 offset-s2">
+            <form action="" id="form">
+              <div class="row">
+                <div class="col s12">
+                  <label for="text" class="black-text">Seleccione el archivo correspondiente de los documentos que desea introducir</label>
+                  <input type="file" accept=".txt" id="text">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col s12 center">
+            <button type="button" class="btn waves-effect waves-light" name="action" id="button">Mostrar resultados</button>
+          </div>
+          <!--id's donde se muestran los resultados-->
+          <div id="similarityTable" class="col s12 center"></div>
+          <div id="documentsTable" class="col s12 center"></div>
+        </div>
+      </div>
+    </main>
+    <!--Carga de los ficheros del programa-->
+    <script type="text/javascript" src="src/recommender.js"></script>
+    <script type="text/javascript" src="./src/form.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
