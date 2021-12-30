@@ -100,4 +100,4 @@ const result = document.getElementById('button');
 
 Al pulsar el botón se lleva a cabo la ejecución de la función `calculateDocuments()` que se encarga de llamar a las funciones que calculan las matrices de los valores TF, IDF y TFIDF de los términos de cada documento, luego se recorre cada uno de los documentos, es decir, las filas de las matrices y con la llamada a la función `getTableDocument()` se obtiene la tabla en HTML de dicho documento con los valores calculados. Las distintas tablas de los documentos se van almacenando en una cadena que devuelve.
 
-Por último, la función `getTableSimilarity()` permite imprimir la tabla de documentos en HTML con los valores de Similitud de Coseno.
+Por último, también se lleva a cabo la llamada de la función `getTableSimilarity()` que permite devolver la tabla de documentos en HTML con los valores de Similitud de Coseno.
