@@ -98,7 +98,7 @@ function fileToMatrix(e) {
 }
 ```
 
-Por otro lado, tenemos el evento "clic" que permite ejecutar los cálculos de la recomendación y además, mostrarlos en pantalla a través de los id's.
+Por otro lado, tenemos el evento **clic** que permite ejecutar los cálculos de la recomendación y además, mostrarlos en pantalla a través de los id's.
 
 ```js
 /**
