@@ -310,3 +310,13 @@ Una vez terminado de introducir el archivo se debe pulsar el botón **MOSTRAR RE
     * IDF
     * TFIDF
  
+## 5. Ejemplo de uso
+
+En la siguiente animación se puede mostrar un ejemplo de uso del programa:
+
+<p align="center">
+ <a href="https://github.com/alu0101228020/MBC-RecommenderSystem/blob/main/docs/media/example.gif">
+  <img src="./docs/media/example.gif" style="max-width:100%; width: 150%">
+ </a>
+</p>
+
