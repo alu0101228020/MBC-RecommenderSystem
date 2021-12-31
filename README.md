@@ -299,7 +299,7 @@ Una vez que se haya accedido se mostrará la siguiente página web:
 
 En el formulario que se observa, se tiene que introducir el archivo de texto que se desea analizar y que debe contener por cada fila un documento.
 
-Una vez terminado de introducir el archivo se debe pulsar el botón **MOSTRAR RESULTADOS** que mostrará lo siguiente:
+Una vez que se ha terminado de introducir el archivo, se debe pulsar el botón **MOSTRAR RESULTADOS** que mostrará lo siguiente:
 
 * Tabla que muestra la Similitud de Coseno entre cada par de documentos.
 
