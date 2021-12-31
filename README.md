@@ -295,7 +295,7 @@ Para acceder al sistema de recomendación se puede utilizar el siguiente enlace:
 
 Una vez que se haya accedido se mostrará la siguiente página web:
 
-![Imagen de formulario](./media/form.png)
+![Imagen de formulario](docs/media/form.png)
 
 En el formulario que se observa, se tiene que introducir el archivo de texto que se desea analizar y que debe contener por cada fila un documento.
 
