@@ -312,7 +312,7 @@ Una vez terminado de introducir el archivo se debe pulsar el botón **MOSTRAR RE
  
 ## 5. Ejemplo de uso
 
-En la siguiente animación se puede mostrar un ejemplo de uso del programa:
+En la siguiente animación se puede observar un ejemplo de uso del programa:
 
 <p align="center">
  <a href="https://github.com/alu0101228020/MBC-RecommenderSystem/blob/main/docs/media/example.gif">
