@@ -316,7 +316,7 @@ En la siguiente animación se puede observar un ejemplo de uso del programa:
 
 <p align="center">
  <a href="https://github.com/alu0101228020/MBC-RecommenderSystem/blob/main/docs/media/example.gif">
-  <img src="./docs/media/example.gif" style="max-width:80%; width: 80%">
+  <img src="./docs/media/example.gif" style="max-width:100%; width: 150%">
  </a>
 </p>
 
