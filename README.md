@@ -283,3 +283,30 @@ Para ello, en primer lugar creamos la variable `normalizeMatrix` donde se almace
 
 Por lo que, se realiza un primer `for()` que recorre los documentos que hacen referencia al primer documento, luego se recorre otro `for()` que recorre los documentos que hacen referencia al segundo documento y por último el tercer `for()` que recorre los términos del primer documento, o sea del documento iterado i. Se crea la variable `wordIndex` que a través de la función `indexOf()` comprueba si el término z que se está analizando del primero documento i se encuentra en el segundo documento j. En caso de que se encuentre, se almacenará en la variable la posición del término encontrado en el segundo documento. En caso contrario, devolverá un -1. Por lo tanto, si el valor es distinto del -1, la cuenta (count), que se pone a 0 cuando se inicia un nuevo segundo documento j, almacenará la multiplicación del valor TF del término z en el primer documento i por el valor TF del término en el segundo documento j, que en este caso, la posición del término sería la almacenada en wordIndex. Una vez se termina de analizar cada término del primer documento, la cuenta (count) tendrá la similitud entre el primer documento i y el segundo j que se almacenará en la variable similarityMatrix.
 
+## 4. Intrucciones para utilizar el sistema
+
+Para acceder al sistema de recomendación se puede utilizar el siguiente enlace:
+
+<p align="center">
+  <br>
+  Programa del sistema de recomendación: <ahref="https://alu0101228020.github.io/MBC-RecommenderSystem/">https://alu0101228020.github.io/MBC-RecommenderSystem/</a>
+  <br>
+</p> 
+
+Una vez que se haya accedido se mostrará la siguiente página web:
+
+![Imagen de formulario](media/form.png)
+
+En el formulario que se observa, se tiene que introducir el archivo de texto que se desea analizar y que debe contener por cada fila un documento.
+
+Una vez terminado de introducir el archivo se debe pulsar el botón **MOSTRAR RESULTADOS** que mostrará lo siguiente:
+
+* Tabla que muestra la Similitud de Coseno entre cada par de documentos.
+
+* Para cada documento, una tabla con las siguientes columnas:
+    * Índice del término
+    * Término
+    * TF
+    * IDF
+    * TFIDF
+ 
