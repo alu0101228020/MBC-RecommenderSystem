@@ -320,3 +320,8 @@ En la siguiente animación se puede observar un ejemplo de uso del programa:
  </a>
 </p>
 
+<p align="center">
+ <a href="https://github.com/alu0101228020/MBC-RecommenderSystem/blob/main/docs/media/example1.gif">
+  <img src="./docs/media/example1.gif" style="max-width:100%; width: 150%">
+ </a>
+</p>
